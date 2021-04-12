@@ -1,1 +1,33 @@
-<p>users-list works!</p>
+<div class="container">
+  <nz-table
+    #usersTable
+    [nzData]="dataSet"
+    [nzFrontPagination]="false"
+    [nzTotal]="totalCount"
+    [nzPageSize]="10"
+    (nzPageIndexChange)="onPageIndexChange($event)"
+  >
+    <thead>
+      <tr>
+        <th></th>
+        <th>ID</th>
+        <th>Title</th>
+        <th>description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr
+        *ngFor="let data of usersTable.data"
+        (click)="onUserSelection(data.id)"
+        class="table__row"
+      >
+        <td>
+          <img [src]="data.image" alt="data.title" class="table__image">
+        </td>
+        <td>{{data.id}}</td>
+        <td>{{data.title}}</td>
+        <td>{{data.description.slice(0,60) + '...'}}</td>
+      </tr>
+    </tbody>
+  </nz-table>
+</div>

@@ -13,6 +13,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { AntDesignModule } from './ant-design.module';
 import { UserProfileComponent } from './user-profile/user-profile.component';
+import { UsersListComponent } from "./users-list/users-list.component";
 
 
 registerLocaleData(en);
@@ -21,6 +22,7 @@ registerLocaleData(en);
   declarations: [
     AppComponent,
     UserProfileComponent,
+    UsersListComponent
 
   ],
   imports: [

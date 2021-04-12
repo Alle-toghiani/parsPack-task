@@ -1,1 +1,22 @@
-<p>user-profile works!</p>
+
+<div class="container">
+  <nz-empty *ngIf="userData ===null"></nz-empty>
+  <div class="user__profile" *ngIf="userData !== null">
+    <nz-carousel nzAutoPlay [nzEffect]="effect">
+      <div
+        class="carousel__content"
+         *ngFor="let image of userData.images"
+         nz-carousel-content
+      >
+        <div class="carousel__container"><img [src]="image" alt="" class="carousel__image"></div>
+      </div>
+    </nz-carousel>
+    <div class="user__content">
+      <h1>User Id: {{userData.id}}</h1>
+      <nz-alert [nzType]="userData.online ? 'info' : 'error'" [nzMessage]="userData.online ? 'Online' : 'offline'"></nz-alert>
+      <h2>Title:{{userData.title}}</h2>
+      <p>{{userData.description}}</p>
+    </div>
+  </div>
+
+</div>

@@ -1,0 +1,13 @@
+.container{
+  width: 50em;
+}
+
+.table{
+  &__image{
+    width: 3em;
+    border-radius: 50%;
+  }
+  &__row{
+    cursor: pointer;
+  }
+}
