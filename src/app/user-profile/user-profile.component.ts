@@ -12,9 +12,7 @@ import {DetailedUserModel} from "../detailedUser.model";
 export class UserProfileComponent implements OnInit, OnDestroy {
 
   userData: DetailedUserModel = null;
-
   userDetailSub : Subscription;
-
   effect = 'scrollx';
 
 

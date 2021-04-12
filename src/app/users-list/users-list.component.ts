@@ -34,16 +34,12 @@ export class UsersListComponent implements OnInit, OnDestroy {
         }
       })
     this.dataService.initialFetch();
-
-
-
   }
 
   onPageIndexChange(event : number){
     this.dataService.getUserPortion((event-1)* 10);
   }
   onUserSelection(id:number){
-    console.log("userId",id);
     this.dataService.getUserDetail(id);
   }
 
